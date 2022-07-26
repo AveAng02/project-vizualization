@@ -59,24 +59,16 @@ bool graph::AddEdge(int* vertex1, int* vertex2) {
 int graph::searchPos(int VrtValue) {
 	
 	bool vertexSearchFlag = false;
-
-	try {
-		for (int arrVal = 0; arrVal < VertexNum; arrVal++) {
-			if (Vertices[arrVal] == VrtValue) {
-				return arrVal;
-			}
-		}
-
-		if (vertexSearchFlag == false) {
-			throw 101;
-		}
-	}
-	catch (int errValue) {
-
-		std::cerr << errValue << "Value Not Found." << std::endl;
 		
-		return -3333;
+	for (int arrVal = 0; arrVal < VertexNum; arrVal++) {
+			
+		if (Vertices[arrVal] == VrtValue) {
+				return arrVal;
+		}
+		
 	}
+
+	return -3333;
 }
 
 
@@ -108,4 +100,37 @@ void graph::DFT(int startFromNode) {
 		}
 	}
 }
+
+/*
+
+void graph::BFT(int startFromNode) {
+
+	int NodePos = searchPos(startFromNode);
+
+	// std::cout << " " << Vertices[NodePos];
+	// Visited[NodePos] = true;
+
+	if (NodePos != -3333) {
+
+		for (int range = 0; range < edgeListLen[NodePos]; range++) {
+
+			if (Visited[searchPos(EdgeList[NodePos][range])] == false) {
+
+				std::cout << Vertices[searchPos(EdgeList[NodePos][range])] << " ";
+				Visited[searchPos(EdgeList[NodePos][range])] = true;
+			}
+			else {
+				continue;
+			}
+		}
+
+		for (int range = 0; range < edgeListLen[NodePos]; range++) {
+
+			BFT(Vertices[searchPos(EdgeList[NodePos][range])]);
+		}
+	}
+}
+
+*/
+
 

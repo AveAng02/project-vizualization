@@ -25,6 +25,8 @@ public:
 
 	void DFT(int startFromNode);
 
+	void BFT(int startFromNode);
+
 };
 
 
