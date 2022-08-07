@@ -1,24 +1,18 @@
-#include <iostream>
-#include <queue>
+#include "binaryTree.h"
 
 // pointer to pointer method is more effecient for binary tree
 // create a tree and binary tree class 
 // under a DSA library
 
-struct node{
-    int data;
-    node* leftChild;
-    node* rightChild;
-};
 
-node* createNewNode(int data){
+BST::node* BST::createNewNode(int data){
     node* newNode = new node();
     (*newNode).data = data;
     (*newNode).leftChild = (*newNode).rightChild = NULL;
     return newNode;
 }
 
-node* insert(node* hook, int data){
+BST::node* BST::insert(node* hook, int data){
     if(hook == NULL){
         hook = createNewNode(data);
     }
@@ -34,7 +28,7 @@ node* insert(node* hook, int data){
     return hook;
 }
 
-node* search(node* hook, int data){
+BST::node* BST::search(node* hook, int data){
     if(hook == NULL){
         return NULL;
     }
@@ -53,7 +47,7 @@ node* search(node* hook, int data){
     }
 }
 
-int Minimum(node* hook){
+int BST::Minimum(node* hook){
     if(hook == NULL){
         return -1;
     }
@@ -65,7 +59,7 @@ int Minimum(node* hook){
     }
 }
 
-node* minimum(node* hook){
+BST::node* BST::minimum(node* hook){
     if(hook == NULL){
         return hook;
     }
@@ -77,7 +71,7 @@ node* minimum(node* hook){
     }
 }
 
-int maximum(node* hook){
+int BST::maximum(node* hook){
     if(hook == NULL){
         return -1;
     }
@@ -89,7 +83,7 @@ int maximum(node* hook){
     }
 }
 
-int height(node* hook){
+int BST::height(node* hook){
     if(hook == NULL){
         return -1;
     }
@@ -102,7 +96,7 @@ int height(node* hook){
 }
 
 //Breadth first traversal is level order traversal
-void BFT(node* hook){
+void BST::BFT(node* hook){
     if(hook == NULL){
         return;
     }
@@ -134,7 +128,7 @@ void BFT(node* hook){
  ** postorder <left><right><root>
  */
 
-void DFT_preorder(node* hook){
+void BST::DFT_preorder(node* hook){
     if(hook == NULL){
         return;
     }
@@ -144,7 +138,7 @@ void DFT_preorder(node* hook){
     DFT_preorder(hook->rightChild);
 }
 
-void DFT_inorder(node* hook){
+void BST::DFT_inorder(node* hook){
     if(hook == NULL){
         return;
     }
@@ -154,7 +148,7 @@ void DFT_inorder(node* hook){
     DFT_inorder(hook->rightChild);
 }
 
-void DFT_postorder(node* hook){
+void BST::DFT_postorder(node* hook){
     if(hook == NULL){
         return;
     }
@@ -166,7 +160,7 @@ void DFT_postorder(node* hook){
 
 /////////////////////////////////////
 
-bool isBST(node* hook){
+bool BST::isBST(node* hook){
     if(hook == NULL || hook->leftChild == NULL || hook->rightChild == NULL){
         return true;
     }
@@ -179,7 +173,7 @@ bool isBST(node* hook){
     }
 }
 
-node* deleteNode(node* hook, int data){
+BST::node* BST::deleteNode(node* hook, int data){
     // Add senario when data is not found
     
     node* result = hook;
@@ -216,42 +210,6 @@ node* deleteNode(node* hook, int data){
     return hook;
 }
 
-
-int main() {
-
-    node* root = NULL;
-
-    int arr[12] = {35, 75, 40, 60, 25, 30, 15, 20, 7};//{7, 25, 30, 35, 40, 20, 75, 15, 60};
-
-    for(int i = 0; i < 9; i++){
-        root = insert(root, arr[i]);
-    }
-
-    DFT_inorder(root);
-    std::cout << "\n";
-    BFT(root);
-    std::cout << "\n";
-
-    root = deleteNode(root, 35);
-
-    DFT_inorder(root);
-    std::cout << "\n";
-    BFT(root);
-    std::cout << "\n";
-
-    root = deleteNode(root, 20);
-
-    DFT_inorder(root);
-    std::cout << "\n";
-    BFT(root);
-    std::cout << "\n";
-/*
-    for(int i = 0; i < 12; i++){
-        root = deleteNode(root, arr[i]);
-    }
-*/
-    return 0;
-}
 
 
 
