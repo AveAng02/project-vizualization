@@ -1,34 +1,40 @@
 
 // #include "data-structures/graph.h"
 
-#include "data-structures/binaryTree.h"
+// #include "data-structures/binaryTree.h"
+
+#include "data-structures/linkedList.h"
 
 
 int main() {
 
-	BST tree1;
+	// BST tree1;
 
 	int input = 0, choice = 0;
 
 	std::cout << "Enter an integer for the root node : ";
 	std::cin >> input;
 
-	tree1.hook = tree1.createNewNode(input);
+	// tree1.hook = tree1.createNewNode(input);
+
+	
+
 
 	/*
-	* choice 1 = create new Node
-	* choice 2 = search
-	* choice 3 = breadth first search
-	* choice 4 = depth first search inorder
-	* choice 5 = depth first search postorder
-	* choice 6 = depth first search preorder
-	* choice 7 = check if tree is binary search tree or not
-	* choice 8 = delete node
-	* choice 9 = exit
-	* 
-	*/
 
 	while (choice != 9) {
+
+		
+		* choice 1 = create new Node
+		* choice 2 = search
+		* choice 3 = breadth first search
+		* choice 4 = depth first search inorder
+		* choice 5 = depth first search postorder
+		* choice 6 = depth first search preorder
+		* choice 7 = check if tree is binary search tree or not
+		* choice 8 = delete node
+		* choice 9 = exit
+		
 
 		std::cout << "Enter a choice: \n choice 1 = create new Node \n choice 2 = search \n choice 3 = breadth first search" << std::endl;
 		
@@ -94,7 +100,7 @@ int main() {
 			 
 	}
 
-
+	*/
 
 	/*
 	int beginningNode = 0;
