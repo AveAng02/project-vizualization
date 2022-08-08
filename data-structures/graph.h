@@ -3,7 +3,7 @@
 
 
 
-class graph {
+class Graph {
 
 public:
 
@@ -17,7 +17,7 @@ public:
 
 	int** EdgeList = NULL;
 
-	graph();
+	Graph();
 
 	// bool AddEdge(int* vertex1, int* vertex2);
 

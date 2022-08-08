@@ -1,13 +1,5 @@
-#include "linkedList.h"
+#include "LinkedList.h"
 
-
-struct linkedList::node
-{
-    // data 
-    int data;
-    // position of next node
-    node* nexPos;
-};
 
 /*
 Write functions for the following features:
@@ -19,60 +11,100 @@ Write functions for the following features:
  * print entire list
  */
 
+ /* print entire list
+void LinkedList::printList() {
+
+
+
+}*/
+
+
 
 /*
- * Syntax: insert(integer, pointer of type node)
- * Return Value: returns a pointer to the newly created node (The calling function needs to replace the start value by this pointer.)
- * Functionality: adds a node to the present linked list.
+ * insertOntop : adds a node to the top of the list
  */
-linkedList::node* linkedList::insert(int new_data, node* old_pointer)
+void LinkedList::insertOntop(int new_data)
 {
     node* temp = (node*)malloc(sizeof(node));
     (*temp).data = new_data;
-    (*temp).nexPos = old_pointer;
-    return temp;
+    (*temp).nexPos = top;
+    top = temp;
 }
 
 
 /*
- * Syntax: remove(pointer of type node)
- * Return Value: pointer of type node
- * Functionality: removes a node from the linked list.
+ * remove() : removes a node from the top of the list
+ * 
+ * remove(int pos) : removes a node from the top of the list ( range of position is [1,object.length()] )
+ * 
+ * removeFromend() : removes a node from the end of the list
  */
-linkedList::node* linkedList::remove(node* startPosition)
+void LinkedList::remove()
 {
-    if(startPosition != NULL)
+    if(top != NULL)
     {
-        node* temp = (*startPosition).nexPos;
-        std::cout << (*startPosition).data << " getting freed......" << std::endl;
-        free(startPosition);
-        return temp;
+        node* temp = top;
+        top = top->nexPos;
+
+        std::cout << temp->data << " getting freed......" << std::endl;
+        free(temp);
     }
     else
     {
         std::cout << "No nodes to be removed......." << std::endl;
-        return NULL;
     }
 }
 
+void LinkedList::remove(int pos)
+{
+    if (pos <= length()) {
+
+        node* temp = top;
+
+        int count = 1;
+
+        while (pos != count) {
+
+            temp = temp->nexPos;
+            count++;
+
+        }
+
+
+
+    }
+    
+    
+    if (top != NULL)
+    {
+        node* temp = top;
+        top = top->nexPos;
+
+        std::cout << temp->data << " getting freed......" << std::endl;
+        free(temp);
+    }
+    else
+    {
+        std::cout << "No nodes to be removed......." << std::endl;
+    }
+}
 
 /*
- * Syntax: length(pointer of type node)
- * Return Value: void
- * Functionality: prints the length of the linked list.
+ * length : returns the length of the list
  */
-void linkedList::length(node* starting_point)
+int LinkedList::length()
 {
+    node* temp = top;
+
     int count = 0;
 
-    while(starting_point != NULL)
+    while(top != NULL)
     {
         count++;
-        starting_point = (*starting_point).nexPos;
-
+        temp = temp->nexPos;
     } 
 
-    std::cout << "The length of the list: " << count << std::endl;
+    return count;
 }
 
 
@@ -81,7 +113,7 @@ void linkedList::length(node* starting_point)
  * Return Value: void
  * Functionality: prints the value in a specific location.
  */
-void linkedList::readData(int position, node* startPos)
+void LinkedList::readData(int position, node* startPos)
 {
     int count = 0;
 
@@ -99,7 +131,7 @@ void linkedList::readData(int position, node* startPos)
  * Return Value: void
  * Functionality: replaces the sent position with the sent new data.
  */
-void linkedList::modData(int position, int new_data, node* startPos)
+void LinkedList::modData(int position, int new_data, node* startPos)
 {
     int count = 0;
 
@@ -117,7 +149,7 @@ void linkedList::modData(int position, int new_data, node* startPos)
  * Return Value: void
  * Functionality: prints all the values in the linked list.
  */
-void linkedList::printLst(node* starting_point)
+void LinkedList::printLst(node* starting_point)
 {
     std::cout << "The entire list is:\n";
 
@@ -138,7 +170,7 @@ void linkedList::printLst(node* starting_point)
  * Return Value: void
  * Functionality: frees all the allocated memory in the linked list
  */
-void linkedList::removeAll(node* starting_point)
+void LinkedList::removeAll(node* starting_point)
 {
     node* temp = NULL;
 

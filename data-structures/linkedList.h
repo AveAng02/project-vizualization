@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-class linkedList {
+class LinkedList {
 
 public:
 
@@ -10,9 +10,16 @@ public:
     {
         // data 
         int data;
+
         // position of next node
         node* nexPos;
     };
+
+    node* top = NULL; // 
+
+    node* traversal = NULL; // 
+
+
 
     /*
     Write functions for the following features:
@@ -24,13 +31,15 @@ public:
      * print entire list
      */
 
+    // print entire list
+    void printList();
 
      /*
       * Syntax: insert(integer, pointer of type node)
       * Return Value: returns a pointer to the newly created node (The calling function needs to replace the start value by this pointer.)
       * Functionality: adds a node to the present linked list.
       */
-    node* insert(int new_data, node* old_pointer);
+    void insertOntop(int new_data);
 
 
     /*
@@ -38,15 +47,15 @@ public:
      * Return Value: pointer of type node
      * Functionality: removes a node from the linked list.
      */
-    node* remove(node* startPosition);
+    void remove();
+
+    void remove(int pos);
 
 
     /*
-     * Syntax: length(pointer of type node)
-     * Return Value: void
-     * Functionality: prints the length of the linked list.
+     * length : returns the length of the list
      */
-    void length(node* starting_point);
+    int length();
 
 
     /*

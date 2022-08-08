@@ -1,18 +1,18 @@
-#include "binaryTree.h"
+#include "BinarySearchTree.h"
 
 // pointer to pointer method is more effecient for binary tree
 // create a tree and binary tree class 
 // under a DSA library
 
 
-BST::node* BST::createNewNode(int data){
+BinarySearchTree::node* BinarySearchTree::createNewNode(int data){
     node* newNode = new node();
     (*newNode).data = data;
     (*newNode).leftChild = (*newNode).rightChild = NULL;
     return newNode;
 }
 
-BST::node* BST::insert(node* hook, int data){
+BinarySearchTree::node* BinarySearchTree::insert(node* hook, int data){
     if(hook == NULL){
         hook = createNewNode(data);
     }
@@ -28,7 +28,7 @@ BST::node* BST::insert(node* hook, int data){
     return hook;
 }
 
-BST::node* BST::search(node* hook, int data){
+BinarySearchTree::node* BinarySearchTree::search(node* hook, int data){
     if(hook == NULL){
         return NULL;
     }
@@ -47,7 +47,7 @@ BST::node* BST::search(node* hook, int data){
     }
 }
 
-int BST::Minimum(node* hook){
+int BinarySearchTree::Minimum(node* hook){
     if(hook == NULL){
         return -1;
     }
@@ -59,7 +59,7 @@ int BST::Minimum(node* hook){
     }
 }
 
-BST::node* BST::minimum(node* hook){
+BinarySearchTree::node* BinarySearchTree::minimum(node* hook){
     if(hook == NULL){
         return hook;
     }
@@ -71,7 +71,7 @@ BST::node* BST::minimum(node* hook){
     }
 }
 
-int BST::maximum(node* hook){
+int BinarySearchTree::maximum(node* hook){
     if(hook == NULL){
         return -1;
     }
@@ -83,7 +83,7 @@ int BST::maximum(node* hook){
     }
 }
 
-int BST::height(node* hook){
+int BinarySearchTree::height(node* hook){
     if(hook == NULL){
         return -1;
     }
@@ -96,7 +96,7 @@ int BST::height(node* hook){
 }
 
 //Breadth first traversal is level order traversal
-void BST::BFT(node* hook){
+void BinarySearchTree::BFT(node* hook){
     if(hook == NULL){
         return;
     }
@@ -128,7 +128,7 @@ void BST::BFT(node* hook){
  ** postorder <left><right><root>
  */
 
-void BST::DFT_preorder(node* hook){
+void BinarySearchTree::DFT_preorder(node* hook){
     if(hook == NULL){
         return;
     }
@@ -138,7 +138,7 @@ void BST::DFT_preorder(node* hook){
     DFT_preorder(hook->rightChild);
 }
 
-void BST::DFT_inorder(node* hook){
+void BinarySearchTree::DFT_inorder(node* hook){
     if(hook == NULL){
         return;
     }
@@ -148,7 +148,7 @@ void BST::DFT_inorder(node* hook){
     DFT_inorder(hook->rightChild);
 }
 
-void BST::DFT_postorder(node* hook){
+void BinarySearchTree::DFT_postorder(node* hook){
     if(hook == NULL){
         return;
     }
@@ -160,12 +160,12 @@ void BST::DFT_postorder(node* hook){
 
 /////////////////////////////////////
 
-bool BST::isBST(node* hook){
+bool BinarySearchTree::isBinarySearchTree(node* hook){
     if(hook == NULL || hook->leftChild == NULL || hook->rightChild == NULL){
         return true;
     }
 
-    if(isBST(hook->leftChild) == true && isBST(hook->rightChild) == true && maximum(hook->leftChild) <= hook->data && hook->data <= Minimum(hook->rightChild)){
+    if(isBinarySearchTree(hook->leftChild) == true && isBinarySearchTree(hook->rightChild) == true && maximum(hook->leftChild) <= hook->data && hook->data <= Minimum(hook->rightChild)){
         return true;
     }
     else{
@@ -173,7 +173,7 @@ bool BST::isBST(node* hook){
     }
 }
 
-BST::node* BST::deleteNode(node* hook, int data){
+BinarySearchTree::node* BinarySearchTree::deleteNode(node* hook, int data){
     // Add senario when data is not found
     
     node* result = hook;

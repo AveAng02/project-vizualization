@@ -4,7 +4,7 @@
 #include <queue>
 
 
-class BST {
+class BinarySearchTree {
 
 public:
 
@@ -48,7 +48,7 @@ public:
 
     /////////////////////////////////////
 
-    bool isBST(node* hook);
+    bool isBinarySearchTree(node* hook);
 
     node* deleteNode(node* hook, int data); 
 

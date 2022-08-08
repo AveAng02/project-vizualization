@@ -1,8 +1,8 @@
-#include "graph.h"
+#include "Graph.h"
 
 
 
-graph::graph() {
+Graph::Graph() {
 	
 	std::cout << "Enter the number of vertices : ";
 	std::cin >> VertexNum;
@@ -49,14 +49,14 @@ graph::graph() {
 
 /*
 
-bool graph::AddEdge(int* vertex1, int* vertex2) {
+bool Graph::AddEdge(int* vertex1, int* vertex2) {
 
 }
 
 */
 
 
-int graph::searchPos(int VrtValue) {
+int Graph::searchPos(int VrtValue) {
 	
 	bool vertexSearchFlag = false;
 		
@@ -72,7 +72,7 @@ int graph::searchPos(int VrtValue) {
 }
 
 
-void graph::DFT(int startFromNode) {
+void Graph::DFT(int startFromNode) {
 
 	int NodePos = searchPos(startFromNode);
 
@@ -103,7 +103,7 @@ void graph::DFT(int startFromNode) {
 
 /*
 
-void graph::BFT(int startFromNode) {
+void Graph::BFT(int startFromNode) {
 
 	int NodePos = searchPos(startFromNode);
 
