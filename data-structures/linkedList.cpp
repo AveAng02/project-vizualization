@@ -61,6 +61,8 @@ void LinkedList::remove(int pos)
 
         node* temp = top;
 
+        node* deletetemp = top;
+
         int count = 1;
 
         while (pos != count) {
