@@ -7,7 +7,7 @@ Stack::Stack() {
 
 	STACKSPACE = 10;
 
-	stack = new int(STACKSPACE * sizeof(int));
+	stack = new int[ STACKSPACE ];
 
 	toppos = -1;
 
@@ -42,6 +42,28 @@ int Stack::size() {
 	}
 }
 
+void Stack::extendLength() {
+
+	STACKSPACE *= 2;
+
+	int* newarr = new int[STACKSPACE];
+
+	int* oldarr = stack;
+
+	int counter = toppos;
+
+	for (int i = 0; i < counter; i++) {
+
+		newarr[i] = oldarr[i];
+
+	}
+
+	stack = newarr;
+
+	delete[] oldarr;
+
+}
+
 void Stack::pop() {
 
 	if (toppos != -1) {
@@ -57,10 +79,15 @@ void Stack::pop() {
 
 void Stack::push(int data) {
 
-	if (toppos + 1 != 10) { // stacklength
+	if (toppos + 1 != STACKSPACE) { // stacklength
 		
 		toppos += 1;
 		stack[toppos] = data;
+	}
+	else {
+
+		extendLength();
+		push(data);
 	}
 }
 
@@ -71,4 +98,11 @@ int Stack::top() {
 		return stack[toppos];
 
 	}
+}
+
+
+int Stack::detectError() {
+
+	return stackERRORstatus;
+
 }

@@ -1,4 +1,4 @@
-#pragma once
+
 
 #include <iostream>
 
@@ -22,22 +22,26 @@ public:
 
     int size();
 
+    void extendLength();
+
     void pop();
 
     void push(int data);
 
     int top();
 
-    int stackERRORstatus;
+    int detectError();
 
     // private member
 private:
 
-    int STACKSPACE;
+    unsigned int STACKSPACE;
 
     int* stack;
 
     int toppos;
+
+    int stackERRORstatus;
 
 };
 
