@@ -3,8 +3,9 @@
 
 // #include "data-structures/binaryTree.h"
 
-#include "data-structures/linkedList.h"
+// #include "data-structures/linkedList.h"
 
+#include "data-structures/Stack.h"
 
 int main() {
 
@@ -12,12 +13,59 @@ int main() {
 
 	int input = 0, choice = 0;
 
-	std::cout << "Enter an integer for the root node : ";
-	std::cin >> input;
+	Stack newstack;
 
 	// tree1.hook = tree1.createNewNode(input);
 
-	
+	while (choice != 6) {
+
+		std::cout << "Enter a choice : \n 1 to push a new element \n 2 to remove an element \n 3 print the element at the top of the stack \n"
+			<< "4 to print the size of an array \n 5 to check if the stack is empty \n 6 to exit " << std::endl;
+		std::cin >> choice;
+
+		switch (choice) {
+		case 1:
+			std::cout << "Enter an integer : ";
+			std::cin >> input;
+
+			newstack.push(input);
+			break;
+
+		case 2:
+			newstack.pop();
+
+			if (newstack.stackERRORstatus == -1) {
+				std::cout << "Cannot pop; Stack is empty" << std::endl;
+			}
+
+			break;
+
+		case 3:
+			input = newstack.top();
+			std::cout << "The element at the top of the stack is : " << input << std::endl;
+			break;
+
+		case 4:
+			std::cout << "Size of the stack is : " << newstack.size() << std::endl;
+			break;
+
+		case 5:
+			if (newstack.isEmpty() == true) {
+				std::cout << "Stack is empty." << std::endl;
+			}
+			else {
+				std::cout << "Stack is not empty." << std::endl;
+			}
+			break;
+
+		case 6:
+			newstack.~Stack();
+			return 0;
+
+		default:
+			std::cout << "Wrong choice!" << std::endl;
+		}
+	}
 
 
 	/*

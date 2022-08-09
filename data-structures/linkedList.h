@@ -4,22 +4,66 @@
 
 class LinkedList {
 
+
 public:
 
     struct node
     {
+        
+
         // data 
         int data;
 
         // position of next node
         node* nexPos;
+
     };
 
-    node* top = NULL; // 
+    // constructor
+    // destructor 
+    // copy constructor
+    // copy assignment operator
+    // move constructor 
+    // move assignment operator
+    // public member
+    // private member
 
-    node* traversal = NULL; // 
+
+    // return boolean
+    // 
 
 
+    // the API
+    int get(int* err) {
+
+        if (success condition) {
+            *err = 0;
+            return data;
+        }
+        else {
+            *err = -1;
+            return 0;
+        }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+
+    // what the user will be doing with the API
+    int status = 0;
+    int x = list.get(&status);
+
+    if (status) {
+        std::cerr << "Error occured";
+    }
+    else {
+        do something with x;
+        std::cout << "Success"
+    }
+
+    LinkedList() {
+
+    }
 
     /*
     Write functions for the following features:
@@ -31,8 +75,6 @@ public:
      * print entire list
      */
 
-    // print entire list
-    void printList();
 
      /*
       * Syntax: insert(integer, pointer of type node)
@@ -53,9 +95,9 @@ public:
 
 
     /*
-     * length : returns the length of the list
+     * length : returns the size of the list
      */
-    int length();
+    int size();
 
 
     /*
@@ -63,7 +105,7 @@ public:
      * Return Value: void
      * Functionality: prints the value in a specific location.
      */
-    void readData(int position, node* startPos);
+    int get(int position);
 
 
     /*
@@ -71,7 +113,7 @@ public:
      * Return Value: void
      * Functionality: replaces the sent position with the sent new data.
      */
-    void modData(int position, int new_data, node* startPos);
+    void update(int position, int new_data);
 
 
     /*
@@ -79,7 +121,7 @@ public:
      * Return Value: void
      * Functionality: prints all the values in the linked list.
      */
-    void printLst(node* starting_point);
+    void printLst();
 
 
     /*
@@ -87,7 +129,13 @@ public:
      * Return Value: void
      * Functionality: frees all the allocated memory in the linked list
      */
-    void removeAll(node* starting_point);
+    void clear();
+
+private:
+
+    node* root = nullptr; // 
+
+    node* traversal = nullptr; // 
 
 };
 

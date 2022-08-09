@@ -14,24 +14,22 @@ public:
         node* rightChild;
     };
 
-    node* hook = NULL;
+    
 
-    node* createNewNode(int data);
+    node* insert(int data);
 
-    node* insert(node* hook, int data);
+    node* search(int data);
 
-    node* search(node* hook, int data);
+    int Minimum();
 
-    int Minimum(node* hook);
+    node* minimum();
 
-    node* minimum(node* hook);
+    int maximum();
 
-    int maximum(node* hook);
-
-    int height(node* hook);
+    int height();
 
     //Breadth first traversal is level order traversal
-    void BFT(node* hook);
+    void BFT();
 
     /*
      * Depth first search is of three types:
@@ -40,17 +38,24 @@ public:
      ** postorder <left><right><root>
      */
 
-    void DFT_preorder(node* hook);
+    void DFT_preorder();
 
-    void DFT_inorder(node* hook);
+    void DFT_inorder();
 
-    void DFT_postorder(node* hook);
+    void DFT_postorder();
 
     /////////////////////////////////////
 
-    bool isBinarySearchTree(node* hook);
+    bool isBinarySearchTree();
 
-    node* deleteNode(node* hook, int data); 
+    node* deleteNode(int data); 
+
+
+private:
+
+    node* root = nullptr;
+
+    node* createNewNode(int data);
 
 };
 

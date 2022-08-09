@@ -55,46 +55,42 @@ void LinkedList::remove()
     }
 }
 
-void LinkedList::remove(int pos)
+void LinkedList::remove(int pos = 0)
 {
     if (pos <= length()) {
 
-        node* temp = top;
+        node* temp = NULL;
 
         node* deletetemp = top;
 
-        int count = 1;
+        int count = 0;
 
         while (pos != count) {
 
-            temp = temp->nexPos;
+            if (count == (pos - 1)) {
+
+                temp = deletetemp;
+
+            }
+
+            deletetemp = deletetemp->nexPos;
             count++;
 
         }
 
-
+        temp->nexPos = deletetemp->nexPos;
+        deletetemp->nexPos = NULL;
 
     }
     
     
-    if (top != NULL)
-    {
-        node* temp = top;
-        top = top->nexPos;
-
-        std::cout << temp->data << " getting freed......" << std::endl;
-        free(temp);
-    }
-    else
-    {
-        std::cout << "No nodes to be removed......." << std::endl;
-    }
+    
 }
 
 /*
  * length : returns the length of the list
  */
-int LinkedList::length()
+int LinkedList::size()
 {
     node* temp = top;
 
@@ -115,7 +111,7 @@ int LinkedList::length()
  * Return Value: void
  * Functionality: prints the value in a specific location.
  */
-void LinkedList::readData(int position, node* startPos)
+void LinkedList::readData(int position)
 {
     int count = 0;
 
