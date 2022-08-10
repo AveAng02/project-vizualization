@@ -83,7 +83,7 @@ void Queue::extendLength() {
 
 	while (counterOld <= back) {
 
-		newarr[counterNew] == queue[counterOld];
+		newarr[counterNew] = queue[counterOld];
 		counterNew++;
 		counterOld++;
 

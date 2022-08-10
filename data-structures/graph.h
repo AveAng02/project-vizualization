@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "Queue.h"
 
 
 
@@ -9,13 +10,15 @@ public:
 
 	int VertexNum;
 
-	int* edgeListLen = NULL;
+	int* edgeListLen = nullptr;
 
-	int* Vertices = NULL;
+	int* Vertices = nullptr;
 
-	bool* Visited = NULL;
+	bool* Visited = nullptr;
 
-	int** EdgeList = NULL;
+	int** EdgeList = nullptr;
+
+	Queue edgeQ;
 
 	Graph();
 
@@ -25,7 +28,7 @@ public:
 
 	void DFT(int startFromNode);
 
-	// void BFT(int startFromNode);
+	void BFT(int startFromNode);
 
 };
 

@@ -101,36 +101,44 @@ void Graph::DFT(int startFromNode) {
 	}
 }
 
-/*
 
 void Graph::BFT(int startFromNode) {
 
 	int NodePos = searchPos(startFromNode);
 
-	// std::cout << " " << Vertices[NodePos];
-	// Visited[NodePos] = true;
+	for (int counter = 0; counter < edgeListLen[NodePos]; counter++) {
 
-	if (NodePos != -3333) {
+		if (Visited[searchPos(EdgeList[NodePos][counter])] == false) {
 
-		for (int range = 0; range < edgeListLen[NodePos]; range++) {
+			edgeQ.push(Vertices[searchPos(EdgeList[NodePos][counter])]);
+			Visited[searchPos(EdgeList[NodePos][counter])] = true;
 
-			if (Visited[searchPos(EdgeList[NodePos][range])] == false) {
-
-				std::cout << Vertices[searchPos(EdgeList[NodePos][range])] << " ";
-				Visited[searchPos(EdgeList[NodePos][range])] = true;
-			}
-			else {
-				continue;
-			}
 		}
+		else {
 
-		for (int range = 0; range < edgeListLen[NodePos]; range++) {
+			continue;
 
-			BFT(Vertices[searchPos(EdgeList[NodePos][range])]);
 		}
 	}
+
+	for (int counter = 0; counter < edgeListLen[NodePos]; counter++) {
+
+		BFT(Vertices[searchPos(EdgeList[NodePos][counter])]);
+
+	}
+
+	if (edgeQ.size() == VertexNum) {
+
+		while (!edgeQ.isEmpty()) {
+
+			std::cout << edgeQ.gettop() << " ";
+			edgeQ.pop();
+
+		}
+	}
+
 }
 
-*/
+
 
 

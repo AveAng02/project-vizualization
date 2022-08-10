@@ -1,5 +1,5 @@
 
-#include "data-structures/Queue.h"
+#include "data-structures/Graph.h"
 
 // #include "MyDS.h"
 
@@ -15,9 +15,62 @@ int main() {
 
 	// tree1.hook = tree1.createNewNode(input);
 
-	Queue newq;
+	// Queue newq;
 
-	while (choice != 6) {
+	// CircularQueue cq;
+
+	/*while (choice != 6) {
+
+		std::cout << " Enter a choice : \n 1 ---> push \n 2 ---> pop \n 3 ---> print top \n"
+			      << " 4 ---> print size \n 5 ---> check for empty \n 6 ---> exit \n Enter your choice : ";
+
+		std::cin >> choice;
+
+		switch (choice) {
+		case 1:
+			std::cout << "Enter an integer : ";
+			std::cin >> input;
+
+			cq.push(input);
+			break;
+
+		case 2:
+			cq.pop();
+
+			if (cq.detectError() == -1) {
+				std::cout << "Cannot pop; Circular Queue is empty" << std::endl;
+			}
+
+			break;
+
+		case 3:
+			input = cq.gettop();
+			std::cout << "The element at the top of the Circular Queue is : " << input << std::endl;
+			break;
+
+		case 4:
+			std::cout << "Size of the Circular Queue is : " << cq.size() << std::endl;
+			break;
+
+		case 5:
+			if (cq.isEmpty() == true) {
+				std::cout << "Circular Queue is empty." << std::endl;
+			}
+			else {
+				std::cout << "Circular Queue is not empty." << std::endl;
+			}
+			break;
+
+		case 6:
+			cq.~CircularQueue();
+			return 0;
+
+		default:
+			std::cout << "Wrong choice!" << std::endl;
+		}
+	}*/
+
+	/* while (choice != 6) {
 
 		std::cout << "Enter a choice : \n 1 to push a new element \n 2 to remove an element \n 3 print the element at the front of the queue \n"
 			<< "4 to print the size of the queue \n 5 to check if the queue \n 6 to exit " << std::endl;
@@ -65,7 +118,7 @@ int main() {
 		default:
 			std::cout << "Wrong choice!" << std::endl;
 		}
-	}
+	}*/
 
 	/*while (choice != 6) {
 
@@ -200,22 +253,22 @@ int main() {
 
 	*/
 
-	/*
+	
 	int beginningNode = 0;
 
 
-	graph SampleGraph;
+	Graph SampleGraph;
 
 	std::cout << "Enter a node to begin Depth First Search with : ";
 	std::cin >> beginningNode;
 
-	SampleGraph.DFT(beginningNode);
+	// SampleGraph.DFT(beginningNode);
 
 	// std::cout << "Enter a node to begin Breadth First Search with : ";
 	// std::cin >> beginningNode;
 
-	// SampleGraph.BFT(beginningNode);
-	*/
+	SampleGraph.BFT(beginningNode);
+	
 
 	return 0;
 }
