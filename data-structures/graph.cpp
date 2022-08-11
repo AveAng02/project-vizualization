@@ -45,6 +45,7 @@ Graph::Graph() {
 
 		std::cout << "\n";
 	}
+
 }
 
 /*
@@ -102,40 +103,38 @@ void Graph::DFT(int startFromNode) {
 }
 
 
+
 void Graph::BFT(int startFromNode) {
+	
+	int nodepos = searchPos(startFromNode); // stores the position of the starting node 
+	int printvert = 0;
 
-	int NodePos = searchPos(startFromNode);
+	edgeQ.push(Vertices[nodepos]); // pushes the vertices at the nodepos into the queue
 
-	for (int counter = 0; counter < edgeListLen[NodePos]; counter++) {
+	Visited[nodepos] = true; // marks the nodepos as visited
 
-		if (Visited[searchPos(EdgeList[NodePos][counter])] == false) {
+	while (!edgeQ.isEmpty()) {
 
-			edgeQ.push(Vertices[searchPos(EdgeList[NodePos][counter])]);
-			Visited[searchPos(EdgeList[NodePos][counter])] = true;
+		printvert = edgeQ.gettop(); // saves the value of the top of the queue
 
-		}
-		else {
+		std::cout << printvert << " " ; // prints the element at the top
 
-			continue;
+		edgeQ.pop(); // removes the top element
 
-		}
-	}
+		for (int pos = searchPos(printvert), counter = 0; counter < edgeListLen[pos]; counter++) {
 
-	for (int counter = 0; counter < edgeListLen[NodePos]; counter++) {
+			if (Visited[searchPos(EdgeList[pos][counter])] == false) {
 
-		BFT(Vertices[searchPos(EdgeList[NodePos][counter])]);
+				edgeQ.push(EdgeList[pos][counter]); // if the node is not visited already it adds it at the back of the queue
+				Visited[searchPos(EdgeList[pos][counter])] = true;
 
-	}
-
-	if (edgeQ.size() == VertexNum) {
-
-		while (!edgeQ.isEmpty()) {
-
-			std::cout << edgeQ.gettop() << " ";
-			edgeQ.pop();
+			}
 
 		}
+
 	}
+
+	std::cout << "\n";
 
 }
 

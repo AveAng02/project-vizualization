@@ -5,7 +5,7 @@ Queue::Queue() {
 
 	queue = new int[queuelength];
 
-	front = -1;
+	front = 0;
 
 	back = -1;
 
@@ -20,7 +20,19 @@ Queue::~Queue() {
 
 bool Queue::isEmpty() {
 
-	if (front == back == -1) {
+	/*if (front == back == -1) {
+
+		return true;
+
+	}
+
+	if (front == back == 0) {
+
+		return true;
+
+	}*/
+
+	if (front > back) {
 
 		return true;
 
@@ -36,7 +48,7 @@ int Queue::size() {
 		return 0;
 	}
 	
-	return back - front;
+	return back - front + 1;
 }
 
 int Queue::gettop() {
@@ -44,6 +56,11 @@ int Queue::gettop() {
 	if (front != -1) {
 
 		return queue[front];
+
+	}
+	else {
+
+		queueERRORstatus = -1;
 
 	}
 }

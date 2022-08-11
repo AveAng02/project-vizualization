@@ -15,7 +15,7 @@ int main() {
 
 	// tree1.hook = tree1.createNewNode(input);
 
-	// Queue newq;
+	Queue newq;
 
 	// CircularQueue cq;
 
@@ -70,10 +70,11 @@ int main() {
 		}
 	}*/
 
-	/* while (choice != 6) {
+	/*
+	while (choice != 6) {
 
-		std::cout << "Enter a choice : \n 1 to push a new element \n 2 to remove an element \n 3 print the element at the front of the queue \n"
-			<< "4 to print the size of the queue \n 5 to check if the queue \n 6 to exit " << std::endl;
+		std::cout << "Enter a choice : \n 1 --> push \n 2 --> pop \n 3 --> element at top \n"
+			<< " 4 --> print the size \n 5 --> check empty or not \n 6 --> exit " << std::endl;
 		std::cin >> choice;
 
 		switch (choice) {
@@ -118,7 +119,8 @@ int main() {
 		default:
 			std::cout << "Wrong choice!" << std::endl;
 		}
-	}*/
+	}
+	*/
 
 	/*while (choice != 6) {
 
@@ -259,7 +261,7 @@ int main() {
 
 	Graph SampleGraph;
 
-	std::cout << "Enter a node to begin Depth First Search with : ";
+	std::cout << "Enter a node to begin Breadth First Search with : ";
 	std::cin >> beginningNode;
 
 	// SampleGraph.DFT(beginningNode);
