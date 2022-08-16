@@ -2,6 +2,9 @@
 
 #include <iostream>
 
+#include "display-variables.h"
+
+#include "graphics.h"
 
 class Queue {
 
@@ -23,7 +26,13 @@ public:
 
 	int detectError();
 
+	void drawQueue();
+
 private:
+
+#define LENGTH 100
+
+#define BREADTH 100
 
 	unsigned int queuelength = 10;
 

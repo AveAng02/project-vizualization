@@ -25,7 +25,9 @@
     <ClInclude Include="src\data-structures\CircularQueue.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="src\data-structures\Graph.h" />
+    <ClInclude Include="src\data-structures\Graph.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\data-structures\HashTable.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClInclude>
@@ -36,13 +38,16 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="src\data-structures\Queue.h" />
-    <ClInclude Include="src\data-structures\Stack.h" />
+    <ClInclude Include="src\data-structures\Stack.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\ui\External\BGI\include\dibapi.h" />
     <ClInclude Include="src\ui\External\BGI\include\dibutil.h" />
     <ClInclude Include="src\ui\External\BGI\include\graphics.h" />
     <ClInclude Include="src\ui\External\BGI\include\winbgi.h" />
     <ClInclude Include="src\ui\External\BGI\include\winbgim.h" />
     <ClInclude Include="src\ui\External\BGI\include\winbgitypes.h" />
+    <ClInclude Include="src\utils\display-variables.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\data-structures\BinarySearchTree.cpp">
@@ -52,7 +57,9 @@
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\data-structures\Graph.cpp" />
+    <ClCompile Include="src\data-structures\Graph.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\data-structures\HashTable.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -60,8 +67,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\data-structures\Queue.cpp" />
-    <ClCompile Include="src\data-structures\Stack.cpp" />
+    <ClCompile Include="src\data-structures\Stack.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\main\main.cpp" />
+    <ClCompile Include="src\utils\fileAccess.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -133,12 +145,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)vizproj/src/data-structures;$(SolutionDir)vizproj/src/ui/External/BGI/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vizproj/src/utils;$(SolutionDir)vizproj/src/data-structures;$(SolutionDir)vizproj/src/ui/External/BGI/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)vizproj/src/ui/External/BGI/lib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)vizproj\src\ui\External\BGI\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>bgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

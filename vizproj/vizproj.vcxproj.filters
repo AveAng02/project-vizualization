@@ -19,6 +19,9 @@
     <Filter Include="External">
       <UniqueIdentifier>{3fe6b8e7-1e0b-44bc-9a6f-80149febe918}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{2ff8425a-39c6-474e-bcdf-7cbfa59774e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\data-structures\BinarySearchTree.h">
@@ -63,6 +66,9 @@
     <ClInclude Include="src\ui\External\BGI\include\winbgitypes.h">
       <Filter>External</Filter>
     </ClInclude>
+    <ClInclude Include="src\utils\display-variables.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\data-structures\Stack.cpp">
@@ -88,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="src\main\main.cpp">
       <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\fileAccess.cpp">
+      <Filter>Utilities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
