@@ -1,11 +1,5 @@
 #pragma once
 
-#include <iostream>
-
-#include "display-variables.h"
-
-#include "graphics.h"
-
 class Queue {
 
 public:
@@ -26,21 +20,19 @@ public:
 
 	int detectError();
 
-	void drawQueue();
+	int LENGTH = 100;
 
-private:
-
-#define LENGTH 100
-
-#define BREADTH 100
-
-	unsigned int queuelength = 10;
-
-	int* queue;
+	int BREADTH = 100;
 
 	int front;
 
 	int back;
+
+private:
+
+	unsigned int queuelength = 10;
+
+	int* queue;
 
 	int queueERRORstatus;
 

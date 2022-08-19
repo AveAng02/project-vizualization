@@ -22,6 +22,15 @@
     <Filter Include="Utilities">
       <UniqueIdentifier>{2ff8425a-39c6-474e-bcdf-7cbfa59774e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="User-Interface">
+      <UniqueIdentifier>{d3467946-2081-4130-8adf-5be7981a6600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="User-Interface\Header Files">
+      <UniqueIdentifier>{57a0aa26-2fb3-47e5-8b82-a386cbff775a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="User-Interface\Source Files">
+      <UniqueIdentifier>{c6aeae62-c478-4f14-8d69-3cee22393177}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\data-structures\BinarySearchTree.h">
@@ -69,6 +78,12 @@
     <ClInclude Include="src\utils\display-variables.h">
       <Filter>Utilities</Filter>
     </ClInclude>
+    <ClInclude Include="src\ui\controls.h">
+      <Filter>User-Interface\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\frontend.h">
+      <Filter>User-Interface\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\data-structures\Stack.cpp">
@@ -97,6 +112,12 @@
     </ClCompile>
     <ClCompile Include="src\utils\fileAccess.cpp">
       <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\controls.cpp">
+      <Filter>User-Interface\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\frontend.cpp">
+      <Filter>User-Interface\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

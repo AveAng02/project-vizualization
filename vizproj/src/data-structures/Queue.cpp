@@ -108,18 +108,7 @@ int Queue::detectError() {
 
 }
 
-void Queue::drawQueue() {
 
-	for (int iteration = 0, counter = front; counter <= back; counter++) {
-
-		iteration = counter - front;
-
-		std::cout << counter << std::endl;
-
-		rectangle(WINDOW_HEIGHT + (iteration * LENGTH), WINDOW_WIDTH + (iteration * BREADTH), WINDOW_HEIGHT + ((iteration + 1) * LENGTH), WINDOW_WIDTH + ((iteration + 1) * BREADTH));
-	}
-
-}
 
 
 
