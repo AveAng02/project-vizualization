@@ -2,6 +2,10 @@
 
 #include <iostream>
 #include <vector>
+#include <limits>
+
+
+
 #include "Queue.h"
 
 
@@ -20,6 +24,8 @@ public:
 
 	int** EdgeList = nullptr;
 
+	int** adjMatrix;
+
 	Queue edgeQ;
 
 	Graph();
@@ -31,6 +37,21 @@ public:
 	void DFT(int startFromNode);
 
 	void BFT(int startFromNode);
+
+
+
+
+
+	// BinarySearchTree MST(int VrtValue);
+
+	/*
+		
+		Shortest Path Algoritms:
+
+
+
+
+	*/
 
 };
 

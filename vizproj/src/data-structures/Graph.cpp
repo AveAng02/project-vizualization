@@ -24,12 +24,12 @@ Graph::Graph() {
 
 	for (int i = 0; i < VertexNum; i++) {
 
-		std::cout << "Enter the number of adjacent vertices of vertex " << Vertices[i] << " : ";
+		std::cout << "NUMBER of adjacent vertices of vertex " << Vertices[i] << " : ";
 		std::cin >> edgeListLen[i];
 
 		EdgeList[i] = new int[edgeListLen[i]];
 
-		std::cout << "Enter the adjacent vertices of vertex " << Vertices[i] << " : \n";
+		std::cout << "ADJACENT VERTICES of vertex " << Vertices[i] << " : \n";
 		for (int j = 0; j < edgeListLen[i]; j++) {
 			std::cin >> EdgeList[i][j];
 		}
@@ -44,6 +44,44 @@ Graph::Graph() {
 		}
 
 		std::cout << "\n";
+	}
+
+	adjMatrix = new int*[VertexNum];
+
+	for (int i = 0; i < VertexNum; i++)
+	{
+		adjMatrix[i] = new int[VertexNum];
+	}
+
+	for (int j = 0, i = 0; i < VertexNum; i++)
+	{
+		for (j = i + 1; j < VertexNum; j++)
+		{
+			std::cout << "WEIGHT of edge between Vertex " << Vertices[i] << " and Vertex " << Vertices[j] << " : " << std::endl;
+			std::cin >> adjMatrix[i][j];
+		}
+	}
+
+	for (int j = 0, i = 0; i < VertexNum; i++)
+	{
+		for (j = 0; j <= i; j++)
+		{
+			if (i == j)
+			{
+				adjMatrix[i][j] = 0;
+			}
+			else
+			{
+				adjMatrix[i][j] = adjMatrix[j][i];
+			}
+		}
+
+		for (j = 0; j < VertexNum; j++)
+		{
+			std::cout << " | " << adjMatrix[i][j];
+		}
+
+		std::cout << "|\n" << std::endl;
 	}
 
 }
@@ -103,7 +141,6 @@ void Graph::DFT(int startFromNode) {
 }
 
 
-
 void Graph::BFT(int startFromNode) {
 	
 	int nodepos = searchPos(startFromNode); // stores the position of the starting node 
@@ -141,3 +178,10 @@ void Graph::BFT(int startFromNode) {
 
 
 
+
+/*
+BinarySearchTree Graph::MST(int VrtVal)
+{
+
+}
+*/

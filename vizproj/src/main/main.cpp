@@ -1,18 +1,14 @@
 
 
-#include <iostream>
 
-#include "display-variables.h"
-
-#include "Queue.h"
-
-#include "frontend.h"
+#include "Graph.cpp"
 
 
 
 int main() {
 
-	int midx = 0 , midy = 0 , iteration = 0, counter = 0;
+	// UI test block
+	/*int midx = 0, midy = 0, iteration = 0, counter = 0;
 
 	int x = 0, y = 0;
 
@@ -64,8 +60,9 @@ int main() {
 	while (!kbhit())
 	{
 		delay(200);
-	}
+	}*/
 
+	Graph gph1;
 
 	return 0;
 }
