@@ -6,6 +6,31 @@ in computer memory.
 ### Graphs
 
 
+```mermaid
+
+  classDiagram
+ 
+  
+  class data_structures{
+    pure virtual class
+  }
+
+    data_structures --> linear
+    data_structures --> non_linear
+
+    linear --> array
+    linear --> stack
+    linear --> queue
+    linear --> linked_list
+    linear --> heap
+
+    non_linear --> graph
+    non_linear --> tree
+
+
+```
+
+
 
 
 
