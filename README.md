@@ -12,27 +12,31 @@ in computer memory.
 
     data_structures --> linear
     data_structures --> non_linear
+    data_structures --> abstract
 
     linear --> array
     linear --> stack
     linear --> queue
-    linear --> linked_list
     linear --> heap
 
     non_linear --> graph
-    non_linear --> tree
+    graph --> tree
+    
+    abstract --> linked_list
 
 class data_structures{
     // this is a pure virtual class
     +enums [ linear, non-linear ]
-    +take_input() // pure vitual function
-    +build()      // pure vitual function
-    +display()    // pure vitual function
+    
+    
+    pure vitual function : +take_input() 
+    pure vitual function : +build() 
+    pure vitual function : +display()    
   }
   
 class linear{
 // this is a pure virtual class
-+enums [ array, stack, queue, linked_list, heap]
++enums [ array, stack, queue, heap]
 
 }
 
@@ -41,6 +45,13 @@ class non_linear{
 +enums [ graph, tree]
 
 }
+
+class abstract{
+// this is a pure virtual class
++enums [ linked_list]
+
+}
+
 
 
 
