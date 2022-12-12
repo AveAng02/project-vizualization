@@ -64,6 +64,25 @@ int main() {
 
 	Graph gph1;
 
+	std::vector<int> path;
+
+	int vrtstart = 0, vrtend = 0;
+
+	std::cout << "Enter the starting Vertex : ";
+	std::cin >> vrtstart;
+
+	std::cout << "Enter the ending Vertex : ";
+	std::cin >> vrtend;
+
+	path = gph1.dijkstraAlgo(vrtstart, vrtend);
+
+	for (int i = 0; i < path.size(); i++)
+	{
+		std::cout << path.at(i) << " -> ";
+	}
+
+	std::cout << std::endl;
+
 	return 0;
 }
 

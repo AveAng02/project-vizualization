@@ -31,6 +31,15 @@
     <Filter Include="User-Interface\Source Files">
       <UniqueIdentifier>{c6aeae62-c478-4f14-8d69-3cee22393177}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\ds_design">
+      <UniqueIdentifier>{3ad648ec-34f2-4536-9970-ba35463737eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ds_design\blueprints">
+      <UniqueIdentifier>{64a4f564-73b8-4753-8f6c-2cae7a492164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ds_design\implementation">
+      <UniqueIdentifier>{a26161b4-1811-4d64-abc3-06109113d9b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\data-structures\BinarySearchTree.h">
@@ -119,5 +128,10 @@
     <ClCompile Include="src\ui\frontend.cpp">
       <Filter>User-Interface\Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\data-structures\data_structures.h.txt">
+      <Filter>Header Files\ds_design\blueprints</Filter>
+    </Text>
   </ItemGroup>
 </Project>
