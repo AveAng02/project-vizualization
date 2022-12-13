@@ -35,15 +35,19 @@ class data_structures{
   }
   
 class linear{
-// this is a pure virtual class
-+enums [ array, stack, queue, heap]
+  // this is a pure virtual class
+  +enums [ array, stack, queue, heap]
 
+  pure vitual function : +searching()
+  pure vitual function : +sorting()
 }
 
 class non_linear{
-// this is a pure virtual class
-+enums [ graph, tree]
+  // this is a pure virtual class
+  +enums [ graph, tree]
 
+  pure vitual function : +breadth_first_traversal()
+  pure vitual function : +depth_first_traversal()
 }
 
 class abstract{
