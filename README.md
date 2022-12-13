@@ -30,6 +30,7 @@ class data_structures{
     
     
     pure vitual function : +take_input() 
+    pure vitual function : +delete_data() 
     pure vitual function : +build() 
     pure vitual function : +display()    
   }
