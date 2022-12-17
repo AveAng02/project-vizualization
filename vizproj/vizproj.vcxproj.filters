@@ -31,13 +31,13 @@
     <Filter Include="User-Interface\Source Files">
       <UniqueIdentifier>{c6aeae62-c478-4f14-8d69-3cee22393177}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\ds_design">
+    <Filter Include="Header Files\DS_Design">
       <UniqueIdentifier>{3ad648ec-34f2-4536-9970-ba35463737eb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\ds_design\blueprints">
+    <Filter Include="Header Files\DS_Design\Blueprints">
       <UniqueIdentifier>{64a4f564-73b8-4753-8f6c-2cae7a492164}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\ds_design\implementation">
+    <Filter Include="Header Files\DS_Design\Implementation">
       <UniqueIdentifier>{a26161b4-1811-4d64-abc3-06109113d9b3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -93,6 +93,18 @@
     <ClInclude Include="src\ui\frontend.h">
       <Filter>User-Interface\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\data-structures\DS_Blueprint.h">
+      <Filter>Header Files\DS_Design\Blueprints</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data-structures\Linear_DS_Blueprint.h">
+      <Filter>Header Files\DS_Design\Blueprints</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data-structures\Non_Linear_DS_Blueprint.h">
+      <Filter>Header Files\DS_Design\Blueprints</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data-structures\Abstract_DS_Blueprint.h">
+      <Filter>Header Files\DS_Design\Blueprints</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\data-structures\Stack.cpp">
@@ -128,10 +140,5 @@
     <ClCompile Include="src\ui\frontend.cpp">
       <Filter>User-Interface\Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="src\data-structures\data_structures.h.txt">
-      <Filter>Header Files\ds_design\blueprints</Filter>
-    </Text>
   </ItemGroup>
 </Project>
